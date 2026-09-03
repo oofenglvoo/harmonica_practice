@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f1e8" />
+    <title>音阶练习 · 听见每一个音</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="音阶练习首页">
+          <span class="brand-mark">♫</span>
+          <span>音阶练习</span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> <span id="keySummary">C 大调</span> · 初级听辨</div>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">DAILY EAR TRAINING <span>01</span></p>
+        <h1>让耳朵记住<br /><em>每一个音。</em></h1>
+        <p class="intro-copy">跟随声音与标注，建立数字、唱名和音高之间的连接。</p>
+      </section>
+
+      <section class="practice-card" aria-label="音阶播放器">
+        <div class="card-heading">
+          <div>
+            <p class="section-label">当前练习</p>
+            <h2 id="modeTitle">跟唱音阶</h2>
+          </div>
+          <div class="sequence-count"><span id="sequenceIndex">01</span> / 07</div>
+        </div>
+
+        <div class="note-display" id="noteDisplay">
+          <div class="note-orbit orbit-one"></div>
+          <div class="note-orbit orbit-two"></div>
+          <span class="note-number" id="noteNumber">1</span>
+          <span class="note-name" id="noteName">Do</span>
+          <span class="note-hz" id="noteHz">C4 · 262 Hz</span>
+        </div>
+
+        <div class="scale-row" id="scaleRow"></div>
+
+        <div class="player-controls">
+          <button class="icon-button" id="restartButton" title="重新开始" aria-label="重新开始">↺</button>
+          <button class="play-button" id="playButton"><span class="play-icon">▶</span><span id="playText">开始练习</span></button>
+          <button class="icon-button" id="muteButton" title="静音" aria-label="静音">◖</button>
+        </div>
+
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-meta"><span id="progressText">准备开始</span><span id="elapsedText">00:00</span></div>
+      </section>
+
+      <section class="settings-grid" aria-label="练习设置">
+        <div class="settings-panel">
+          <div class="panel-title"><span>播放设置</span><span class="panel-index">A</span></div>
+          <label class="setting-line">速度 <strong id="tempoValue">中速</strong></label>
+          <input id="tempoSlider" type="range" min="500" max="1800" value="1000" step="100" />
+          <div class="range-labels"><span>慢</span><span>快</span></div>
+          <div class="option-pills" id="directionOptions">
+            <button class="pill active" data-direction="up">上行</button>
+            <button class="pill" data-direction="down">下行</button>
+            <button class="pill" data-direction="updown">上下行</button>
+          </div>
+          <label class="setting-line key-setting">调性 <strong><select id="keySelect" aria-label="选择调性"></select></strong></label>
+          <label class="setting-line instrument-setting">音色 <strong><select id="instrumentSelect" aria-label="选择乐器音色">
+            <option value="piano">钢琴</option>
+            <option value="xylophone">木琴</option>
+            <option value="flute">长笛</option>
+            <option value="guitar">吉他</option>
+            <option value="melodica">口风琴</option>
+            <option value="harmonica">口琴</option>
+            <option value="sine">纯音</option>
+          </select></strong></label>
+          <div class="option-pills" id="modeOptions">
+            <button class="pill active" data-mode="ordered">顺序</button>
+            <button class="pill" data-mode="random">随机</button>
+          </div>
+        </div>
+        <div class="settings-panel accent-panel">
+          <div class="panel-title"><span>听音挑战</span><span class="panel-index">B</span></div>
+          <p class="challenge-description" id="challengeDescription">听到一个音，选择你认为正确的唱名。</p>
+          <button class="challenge-button" id="challengeButton">播放挑战音 <span>→</span></button>
+          <div class="answer-grid" id="answerGrid" aria-label="挑战答案"></div>
+          <p class="challenge-feedback" id="challengeFeedback" role="status"></p>
+          <div class="score-line">本轮正确率 <strong id="scoreText">—</strong></div>
+        </div>
+      </section>
+
+      <footer><span>建议佩戴耳机练习</span><span>按键 1–7 可播放对应音符</span></footer>
+    </main>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
