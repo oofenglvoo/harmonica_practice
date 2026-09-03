@@ -23,6 +23,7 @@ footer { display:flex; justify-content:space-between; padding-top:25px; }.toast 
 @media (max-width:650px) { .app-shell { width:min(100% - 28px, 540px); padding-top:18px; }.topbar-note { display:none; }.intro { display:block; padding:45px 0 30px; }.intro-copy { margin-top:22px; }.practice-card { padding:18px; }.note-display { height:220px; }.note-number { font-size:90px; }.scale-row { gap:4px; }.scale-key { min-height:67px; padding:8px 5px; }.key-number { font-size:18px; }.key-name { font-size:10px; }.key-note { display:none; }.settings-grid { grid-template-columns:1fr; }.settings-panel { padding:19px; } footer { display:block; line-height:2.2; } }
 .key-setting { margin-top:22px; margin-bottom:0; }
 .key-setting select { min-width:110px; padding:5px 8px; color:var(--ink); border:1px solid var(--line); background:var(--paper); font-size:12px; font-weight:600; }
+.note-display.masked .note-number, .note-display.masked .note-name, .note-display.masked .note-hz { opacity:0; }
 .instrument-setting { margin-top:12px; margin-bottom:0; }
 .instrument-setting select { min-width:110px; padding:5px 8px; color:var(--ink); border:1px solid var(--line); background:var(--paper); font-size:12px; font-weight:600; }
 .answer-grid { display:grid; grid-template-columns:repeat(7, 1fr); gap:5px; margin-top:16px; }

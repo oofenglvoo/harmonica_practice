@@ -51,7 +51,7 @@
           <button class="icon-button" id="muteButton" title="静音" aria-label="静音">◖</button>
         </div>
 
-        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-track" id="progressTrack"><div class="progress-fill" id="progressFill"></div></div>
         <div class="progress-meta"><span id="progressText">准备开始</span><span id="elapsedText">00:00</span></div>
       </section>
 
@@ -77,8 +77,9 @@
             <option value="sine">纯音</option>
           </select></strong></label>
           <div class="option-pills" id="modeOptions">
-            <button class="pill active" data-mode="ordered">顺序</button>
+            <button class="pill active" data-mode="ordered">普通模式</button>
             <button class="pill" data-mode="random">随机</button>
+            <button class="pill" data-mode="hidden">盲听</button>
           </div>
         </div>
         <div class="settings-panel accent-panel">
